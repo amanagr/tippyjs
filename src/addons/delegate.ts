@@ -49,7 +49,7 @@ function delegate(
   const normalizedReturnValue = normalizeToArray(returnValue);
 
   function onTrigger(event: Event): void {
-    if (!event.target || disabled) {
+    if (!(event.target instanceof Element) || disabled) {
       return;
     }
 
